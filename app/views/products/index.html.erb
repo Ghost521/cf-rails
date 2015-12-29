@@ -4,20 +4,19 @@
 
 <div class="container-fluid product-listings">
   <h1>Listing Products</h1>
-  
-  <% @products.each_slice(3) do |products| %>
-    <div class="row">
-      <% products.each do |product| %>
-        <div class="col-lg-4">
-          <%= image_tag(product.image_url, class: 'list_image', size: '260x320') %>
-          <%= product.description %> <br/>
-          <%= product.colour %> <br/>
-          <%= link_to 'Show', product %><br/>
-        </div>
-      <% end %>    
+  <div class="row"></div>
+    <% @products.each do |product| %>
+      <div class="col-sm-2 col-md-4">
+        <%= image_tag(product.image_url, class: 'img-responsive', size: '260x320') %>
+        <%= product.price %> <br/>
+        <%= product.colour %> <br/>
+        <%= product.description %> <br/>
+        <%= product.colour %> <br/>
+        <%= link_to 'Show', product %><br/>
+      </div>    
+      <hr/>
+    <% end %>
     </div>
-    <hr/>
-  <% end %>
 </div>
 
 
